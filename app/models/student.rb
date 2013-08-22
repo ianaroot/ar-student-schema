@@ -12,19 +12,5 @@ class Student < ActiveRecord::Base
     now = Date.today
     now.year - birthday.year - ((now.month > birthday.month || (now.month == birthday.month && now.day >= birthday.day)) ? 0 : 1)
   end
-
-  def fill_name
-    self[:name] = "#{self.first_name} #{self.last_name}"
-    self.save
-  end
-
-  def self.fill_name
-    self.all.map! do |row|
-      row.fill_name
-    end
-  end
 end
 
-
-
-Student.create(name: "Sam Bee")

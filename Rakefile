@@ -14,6 +14,11 @@ task "db:drop" do
   rm_f 'db/ar-students.sqlite3'
 end
 
+desc "roll back the last migration"
+task "db:rollback" do
+  # place code here. make it brilliant.
+end
+
 desc "migrate the database (options: VERSION=x, VERBOSE=false, SCOPE=blog)."
 task "db:migrate" do
   ActiveRecord::Migrator.migrations_paths << File.dirname(__FILE__) + 'db/migrate'
