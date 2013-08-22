@@ -25,3 +25,6 @@ class Student < ActiveRecord::Base
   end
 end
 
+
+
+Student.create(name: "Sam Bee")
